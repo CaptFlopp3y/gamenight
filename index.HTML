@@ -8,30 +8,23 @@
 <body>
 	<div class="header">
 		<header>
-			<div id="score-container">
-				<h2>View High Scores</h2>
-				<p id="score"></p>
-	
-			</div>
-			<p id="Timer"></p>
-		</header>
-		<form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			<div class="container">
+				<div id="question-container" class="hide">
+				  <div id="question">Question</div>
+				  <div id="answer-buttons" class="btn-grid">
+					<button class="btn">Answer 1</button>
+					<button class="btn">Answer 2</button>
+					<button class="btn">Answer 3</button>
+					<button class="btn">Answer 4</button>
+				  </div>
+				</div>
+				<div class="controls">
+				  <button id="start-btn" class="start-btn btn">Start</button>
+				  <button id="next-btn" class="next-btn btn hide">Next</button>
+				</div>
+			  </div>
 	<button type="submit" id="submit-btn">Submit</button>
-		</form>
+		
 		
 	</div>
 
