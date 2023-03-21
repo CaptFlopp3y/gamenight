@@ -80,10 +80,10 @@ const questions = [
   {
     question: 'Which file starts with the code <!DOCTYPE html>',
     answers: [
-      { text: 'index.HTML', correct: true },
+      { text: 'index.html', correct: true },
       { text: 'script.js', correct: false },
       { text: 'style.css', correct: false },
-      { text: 'index.HTNL', correct: false }
+      { text: 'index.HTML', correct: false }
     ]
   },
   {
