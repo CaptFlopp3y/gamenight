@@ -114,3 +114,23 @@ const questions = [
     ]
   },
 ]
+
+
+var  timeE1 = document.getElementById("timer");
+var secondsLeft = 90;
+function setTime() {
+  var timerInterval = setInterval (function () {
+    secondsLeft--;
+    timeE1.textContent = secondsLeft;
+    if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+    sendMessage();
+    }
+  }, 1000);
+  }
+
+  function sendMessage() {
+    timeEl.textContent = " ";
+  }
+  
+  setTime();
