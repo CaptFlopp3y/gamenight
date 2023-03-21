@@ -18,6 +18,7 @@ function startGame() {
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
+  setTime();
 }
 
 function setNextQuestion() {
@@ -133,4 +134,6 @@ function setTime() {
     timeEl.textContent = " ";
   }
   
-  setTime();
+
+
+
