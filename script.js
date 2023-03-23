@@ -118,7 +118,7 @@ const questions = [
 
 
 var  timeE1 = document.getElementById("timer");
-var secondsLeft = 90;
+var secondsLeft = 60;
 function setTime() {
   var timerInterval = setInterval (function () {
     secondsLeft--;
@@ -133,7 +133,52 @@ function setTime() {
   function sendMessage() {
     timeEl.textContent = " ";
   }
-  
 
+  var highScore = 0;
+
+  function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+      nextButton.classList.remove('hide')
+    } else {
+      const score = secondsLeft;
+      if (score > highScore) {
+        highScore = score;
+        alert(`New high score: ${highScore}`);
+      } else {
+        alert(`Your score: ${score}`);
+      }
+      startButton.innerText = 'Restart'
+      startButton.classList.remove('hide')
+    }
+  }
+
+  const highScoreElement = document.getElementById('high-score');
+  
+  function startGame() {
+    startButton.classList.add('hide')
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
+    setTime();
+    updateHighScore();
+  }
+  
+  function updateHighScore() {
+    highScoreElement.textContent = highScore;
+  }
+  
+  
+  
+  
+  
+  
+  
 
 
